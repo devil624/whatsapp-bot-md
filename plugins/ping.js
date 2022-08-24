@@ -9,10 +9,10 @@ bot(
 	},
 	async (message, match) => {
 		const start = new Date().getTime()
-		await message.send('```Ping!```')
+		await message.send('*TESTING SPEED!*')
 		const end = new Date().getTime()
 		return await message.send(
-			'*Pong!*\n ```' + (end - start) + '``` *ms*'
+			'*⟬ RESPONSE IN ' + (end - start) + ' MS ⟭*'
 		)
 	}
 )
