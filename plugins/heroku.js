@@ -197,7 +197,7 @@ bot(
 	async (message, match) => {
 		const update = await isUpdate()
 		if (!update.length) return await message.send('*Bot is up-to-date.*')
-		return await message.send('*New updates*\n\n' + update.join('\n'))
+		return await message.send('*ɴᴇᴡ ᴜᴘᴅᴀᴛᴇ ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ʙᴏᴛ!*\n\n*ᴄʜᴀɴɢᴇs*:\n\n❐' + update.join('\n❐'))
 	}
 )
 
