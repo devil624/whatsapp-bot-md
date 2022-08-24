@@ -41,6 +41,10 @@ module.exports = {
 	FORCE_LOGOUT: toBool(process.env.FORCE_LOGOUT),
 	BRAINSHOP: process.env.BRAINSHOP || '159501,6pq8dPiYt7PdqHz3',
 	DIS_BOT: process.env.DISABLE_BOT || 'null',
+        BOT_INFO: 
+                process.env.BOT_INFO || '𝐙𝐄𝐘𝐑𝐎𝐗,𝐌𝐄𝐓𝐑𝐎-𝐁𝐎𝐓,https://i.imgur.com/l0t8EEC.jpeg',
+        FOOTERMARK:
+		process.env.FOOTERMARK || '©𝐙𝐄𝐘𝐑𝐎𝐗',
 	ANTILINK_MSG:
 		process.env.ANTILINK_MSG || '_Antilink Detected &mention kicked_',
 	ANTISPAM_MSG:
