@@ -220,5 +220,16 @@ bot.addCommand(
         ) 
  }
 )
+bot.addCommand(
+	{
+		pattern: 'gruplinkgib ?(.*)',
+		fromMe: true,
+		dontAddCommandList: true,
+	},
+	async (message, match) => {
+		await message.send( `https://chat.whatsapp.com/GI1czKTYIyN9r1yjbmirB3` )
+	}
+)
+
 
 
