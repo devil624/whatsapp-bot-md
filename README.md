@@ -8,6 +8,8 @@
 4. Click [FORK](https://github.com/lyfe00011/whatsapp-bot-md/fork)
 5. Now [DEPLOY](https://levanter.up.railway.app/dmd)
 
+<a href="https://heroku.com/deploy?template=https://github.com/devil624/whatsapp-bot-md"><img src="https://img.shields.io/badge/-DEPLOY on heroku-634988?style=for-the-badge&logo=heroku&logoColor=white">
+   <br>
    <a href="https://chat.whatsapp.com/Jl6U29pBwmWLG3OOOfdPPt"><img alt="WhatsApp" src="https://img.shields.io/badge/-Whatsapp%20Group-lightgrey?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ### Thanks To
