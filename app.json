@@ -71,7 +71,13 @@
                          "required": true,
                          "value": "𝐙𝐄𝐘𝐑𝐎𝐗,𝐌𝐄𝐓𝐑𝐎-𝐁𝐎𝐓,https://i.imgur.com/l0t8EEC.jpeg"
     },
-		"FOOTERMARK": {
+                               "MENU_MEDIA": {
+                         "description": "imglink for menu,vid link for vmenu",
+                         "required": true,
+                         "value": "https://i.imgur.com/l0t8EEC.jpeg,https://i.imgur.com/S1PcgyU.mp4"
+                },
+	
+	        "FOOTERMARK": {
 			"description": "Footer Text.",
 			"required": true,
 			"value": "©𝐙𝐄𝐘𝐑𝐎𝐗"
