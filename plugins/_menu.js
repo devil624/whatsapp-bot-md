@@ -9,7 +9,7 @@ const {
 	getRam,
         genHydratedButtons,
         getBuffer,
-        jidtoNum,
+        jidToNum,
         genThumbnail,
 } = require('../lib/')
 const { VERSION, FOOTERMARK, BOT_INFO, } = require('../config')
