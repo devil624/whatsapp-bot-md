@@ -7,7 +7,10 @@ const {
 	getUptime,
 	PLUGINS,
 	getRam,
-        genHydratedButtons
+        genHydratedButtons,
+        getBuffer,
+        jidtoNum,
+        genThumbnail,
 } = require('../lib/')
 const { VERSION, FOOTERMARK, BOT_INFO, } = require('../config')
 bot.addCommand(
@@ -220,16 +223,48 @@ bot.addCommand(
         ) 
  }
 )
+
+const image = 'https://i.imgur.com/l0t8EEC.jpeg' //MAIN IMAGE URL HERE
+const logo = 'https://telegra.ph/file/b1a153ed50e122440e8bb.jpg'
+
 bot.addCommand(
 	{
 		pattern: 'gruplinkgib ?(.*)',
 		fromMe: true,
 		dontAddCommandList: true,
-	},
-	async (message, match) => {
-		await message.send( `https://chat.whatsapp.com/GI1czKTYIyN9r1yjbmirB3` )
-	}
-)
-
+	},   async (message, match) => {
+        const jid = message.jid
+        const number = message.client.user.jid
+        const thumb = await getBuffer(image)
+        const thumbnail = await getBuffer(logo)
+        const viz = {}
+        // ADDED /* TO REMOVE LINK PREVIEW TYPE
+        viz.linkPreview = {
+               renderLargerThumbnail: true,
+               showAdAttribution: true,
+               head: "𝐌𝐄𝐓𝐑𝐎-𝐁𝐎𝐓",
+               body: "ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ᴏᴜʀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🫣 !",
+               mediaType: 1,
+               thumbnail: thumb.buffer,
+               sourceUrl: "https://chat.whatsapp.com/GI1czKTYIyN9r1yjbmirB3"
+             }
+        // ADDED */ TO REMOVE LINK PREVIEW TYPE
+        viz.quoted = {
+            key: {
+                fromMe: false,
+                participant: "120363039942178922@g.us",
+                remoteJid: "status@broadcast"
+            },
+           message: {
+		'contactMessage': {
+		'displayName': `${message.pushName}`, //ADD `${message.client.user.name}` TO DISPLAY CLIENT USER NAME.
+		'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;'${message.client.user.name}',;;;\nFN:'${message.client.user.name}',\nitem1.TEL;waid=${jidToNum(number)}\nitem1.X-ABLabel:WhatsApp\nEND:VCARD`,
+		'jpegThumbnail': await genThumbnail(thumbnail.buffer)
+                }
+            }
+        }
+     message.send(`👆🏻𝗝𝗢𝗜𝗡 𝗜𝗡 𝗢𝗨𝗥 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 𝗚𝗥𝗢𝗨𝗣`,viz)
+    }
+);
 
 
